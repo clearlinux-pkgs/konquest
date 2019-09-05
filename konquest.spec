@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : konquest
-Version  : 19.08.0
-Release  : 10
-URL      : https://download.kde.org/stable/applications/19.08.0/src/konquest-19.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.08.0/src/konquest-19.08.0.tar.xz
-Source1 : https://download.kde.org/stable/applications/19.08.0/src/konquest-19.08.0.tar.xz.sig
+Version  : 19.08.1
+Release  : 11
+URL      : https://download.kde.org/stable/applications/19.08.1/src/konquest-19.08.1.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.08.1/src/konquest-19.08.1.tar.xz
+Source1 : https://download.kde.org/stable/applications/19.08.1/src/konquest-19.08.1.tar.xz.sig
 Summary  : The KDE version of Gnu-Lactic
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -72,14 +72,14 @@ locales components for the konquest package.
 
 
 %prep
-%setup -q -n konquest-19.08.0
+%setup -q -n konquest-19.08.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565906149
+export SOURCE_DATE_EPOCH=1567707835
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -96,7 +96,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1565906149
+export SOURCE_DATE_EPOCH=1567707835
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/konquest
 cp COPYING %{buildroot}/usr/share/package-licenses/konquest/COPYING
