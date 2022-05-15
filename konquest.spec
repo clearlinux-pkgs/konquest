@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : konquest
-Version  : 22.04.0
-Release  : 37
-URL      : https://download.kde.org/stable/release-service/22.04.0/src/konquest-22.04.0.tar.xz
-Source0  : https://download.kde.org/stable/release-service/22.04.0/src/konquest-22.04.0.tar.xz
-Source1  : https://download.kde.org/stable/release-service/22.04.0/src/konquest-22.04.0.tar.xz.sig
+Version  : 22.04.1
+Release  : 38
+URL      : https://download.kde.org/stable/release-service/22.04.1/src/konquest-22.04.1.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.04.1/src/konquest-22.04.1.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.04.1/src/konquest-22.04.1.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause CC0-1.0 GFDL-1.2 GPL-2.0
@@ -72,15 +72,15 @@ locales components for the konquest package.
 
 
 %prep
-%setup -q -n konquest-22.04.0
-cd %{_builddir}/konquest-22.04.0
+%setup -q -n konquest-22.04.1
+cd %{_builddir}/konquest-22.04.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1650665367
+export SOURCE_DATE_EPOCH=1652643296
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -96,14 +96,14 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1650665367
+export SOURCE_DATE_EPOCH=1652643296
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/konquest
-cp %{_builddir}/konquest-22.04.0/CMakePresets.json.license %{buildroot}/usr/share/package-licenses/konquest/29fb05b49e12a380545499938c4879440bd8851e
-cp %{_builddir}/konquest-22.04.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/konquest/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/konquest-22.04.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/konquest/8287b608d3fa40ef401339fd907ca1260c964123
-cp %{_builddir}/konquest-22.04.0/LICENSES/GFDL-1.2-or-later.txt %{buildroot}/usr/share/package-licenses/konquest/7697008f58568e61e7598e796eafc2a997503fde
-cp %{_builddir}/konquest-22.04.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/konquest/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+cp %{_builddir}/konquest-22.04.1/CMakePresets.json.license %{buildroot}/usr/share/package-licenses/konquest/29fb05b49e12a380545499938c4879440bd8851e
+cp %{_builddir}/konquest-22.04.1/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/konquest/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/konquest-22.04.1/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/konquest/8287b608d3fa40ef401339fd907ca1260c964123
+cp %{_builddir}/konquest-22.04.1/LICENSES/GFDL-1.2-or-later.txt %{buildroot}/usr/share/package-licenses/konquest/7697008f58568e61e7598e796eafc2a997503fde
+cp %{_builddir}/konquest-22.04.1/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/konquest/3e8971c6c5f16674958913a94a36b1ea7a00ac46
 pushd clr-build
 %make_install
 popd
